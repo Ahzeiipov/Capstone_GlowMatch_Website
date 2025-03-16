@@ -1,0 +1,82 @@
+/* Adding styles for the grey box */
+.box {
+    width: 1000px;
+    height: 600px;
+    background-color: #eee;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 15px;
+    border: 2px solid #ddd;
+}
+
+/* Optional: Styling for h1 if needed */
+h1 {
+    color: black;
+    margin: 0;
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* Styling for the answer options container */
+.ans-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 40px;
+    text-align: center;
+    margin: 50px 150px;
+}
+
+/* Styling for the buttons */
+.option-btn {
+    padding: 15px 30px;
+    background-color: white; /* Default background color */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.option-btn:hover {
+    background-color: #89CFF0; /* Hover effect */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Optional: Add a selected class for clicked button */
+.option-btn.selected {
+    background-color: #4CAF50; /* Green color for selected option */
+    color: white;
+}
+.Thebutton{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 350px;
+    margin: 100px 150px;
+    
+}
+.Previous-btn {
+    padding: 15px 30px;
+    background-color:#89CFF0 ; /* Default background color */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    color: white;
+    font-weight: bold;
+}
+.next {
+    padding: 15px 30px;
+    background-color:#89CFF0 ; /* Default background color */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    color: white;
+    font-weight: bold;
+}
+
+.Previous-btn:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}

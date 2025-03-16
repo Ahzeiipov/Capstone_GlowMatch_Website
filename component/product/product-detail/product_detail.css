@@ -1,0 +1,169 @@
+.product-container {
+  margin-top: 90px;
+  display: flex;
+  background: white;
+  padding: 20px;
+  padding-left: 48px;
+  border-radius: 10px;
+  max-width: 100%;
+  min-height: 50%;
+  /* Prevents content shifting */
+}
+
+.image-gallery {
+  position: relative;
+  width: 50%;
+}
+
+.main-image img {
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+
+
+}
+
+.thumbnail {
+  width: 150px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation Button Styling */
+.image-gallery {
+  position: relative;
+  /* width: 50%; */
+  width: 45%;
+  overflow: hidden;
+  /* Prevents buttons from showing outside the container */
+}
+
+.nav-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%) scale(0.8);
+  /* Slightly smaller when hidden */
+  background: rgb(241, 235, 235);
+  color:black;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 20%;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  opacity: 0;
+  /* Initially hidden */
+  visibility: hidden;
+}
+
+/* Position buttons outside the container initially */
+.prev {
+  left: -40px;
+}
+
+.next {
+  right: -40px;
+}
+
+/* Slide in when hovering over image-gallery */
+.image-gallery:hover .nav-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
+  /* Slide in and scale up */
+}
+
+.image-gallery:hover .prev {
+  left: 10px;
+}
+
+.image-gallery:hover .next {
+  right: 10px;
+}
+
+.nav-btn:hover {
+  background: rgb(221, 216, 216);
+}
+
+/* Product Details Styling */
+.product-details {
+  width: 50%;
+  padding-left: 60px;
+
+}
+
+.product-details h3,
+.product-details p {
+  margin-bottom: 30px;
+}
+
+
+/* Tab Navigation */
+.tabs {
+  display: flex;
+  margin-top:50px;
+  margin-bottom: 30px;
+}
+
+.tab-button {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 5px;
+  background: #f1f1f1;
+  transition: background 0.3s ease;
+
+}
+.tab-content ul {
+  list-style-type: none; /* Removes default bullets */
+  padding: 0; /* Removes default padding */
+}
+
+.tab-content ul li::before {
+  content: "- "; /* Adds a dash before each item */
+  margin-right: 5px; /* Adds spacing between dash and text */
+}
+
+.tab-button.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  margin-top: 20px;
+  min-height: 150px;
+  /* Ensures consistent height */
+}
+
+.tab-content.active {
+  display: block;
+}
+
+
+hr {
+  color: #89CFF0;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+#texture img{
+  height: 188px;
+  width: 188px;
+  border-radius: 10px;
+}

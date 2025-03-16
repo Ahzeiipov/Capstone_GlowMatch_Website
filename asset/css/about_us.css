@@ -1,0 +1,59 @@
+.hero {
+    background-image: url('/project_capstone_skincare/GlowMatch-front/asset/image/about-us/korean-girl.png'); /* Change this to your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+}
+
+.overlay {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-right: 650px;
+    margin-left: 70px;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly lower */
+    animation: fadeIn 1s forwards; /* Animation */
+}
+.container {
+    text-align: center;
+}
+
+.glowmatch {
+    font-family: 'Poppins', sans-serif; /* Use the Poppins font */
+    font-size: 60px; /* Adjust font size */
+    font-weight: 300; /* Bold text */
+    color: black; /* Text color */
+    position: relative; /* For positioning the underline */
+}
+
+.underline {
+    width: 100px; /* Width of the underline */
+    height: 5px; /* Thickness of the underline */
+    background-color: #62aada; /* Color of the underline */
+    margin: 0 auto; /* Center the underline */
+    position: relative;
+    top: -10px; /* Adjust position of the underline */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 5; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+p {
+    font-size: 23px;
+    color: #2E6C89;
+}
+
+h2 {
+    font-size: 64px;
+    color: #2E6C89;
+}

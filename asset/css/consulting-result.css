@@ -1,0 +1,209 @@
+.title{
+    color: black;
+    margin: 0;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 22px;
+}
+
+
+h1 {
+    font-size: 30px;
+    margin-left: 40px;
+}
+
+.skin-concern li {
+    font-size: 18px;
+    margin-left: 80px;
+}
+.skin-type li {
+    font-size: 18px;
+    margin-left: 80px;
+}
+
+/*  */
+
+.products-container-recommendation{
+    display: flex;
+    /* Use flexbox to align products in a row */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line if needed */
+    gap: 40px;
+    /* Space between each product */
+    margin-left: 190px;
+    margin-top: 20px;
+}
+
+.products {
+    width: 310px;
+    /* Adjust card width */
+    margin-right: 47px;
+    /* Space between each card */
+    border-radius: 8px;
+    /* Add rounded corners */
+    overflow: hidden;
+    /* Ensures the image does not overflow */
+    background-color: #fff;
+    /* Background color */
+
+}
+
+.products:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+.product-image {
+    width: 100%;
+    /* Make image fill the container width */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px 8px 8px 8px;
+    /* Rounded top corners */
+}
+
+.box {
+    padding: 10px;
+    /* text-align: center; /* Center the text */
+}
+
+.box h4 {
+    font-size: 18px;
+    /* Adjust font size for the name */
+    margin: 10px 0;
+}
+
+.box p {
+    font-size: 14px;
+    /* Adjust font size for the job title */
+    color: #777;
+    /* Lighter color for the text */
+    margin: 0;
+}
+
+.btn-primary {
+    margin: 50px 650px;
+}
+.btn-primary:hover {
+   transform: scale(1.05);
+    /* Slightly enlarge the button on hover */
+
+}
+.message-title{
+    text-align: center;
+    margin-top: 100px;
+}
+.message {
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(54, 53, 53);
+
+}
+.underline {
+    border-bottom: 3px solid #ade2fa;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    margin: 10px auto;
+}
+.container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    max-width: 600px;
+    margin: auto;
+}
+.explaination {
+    background-color: rgb(209, 236, 245);
+    border-radius: 30px;
+    padding: 20px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    max-width: 800px;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+}       
+
+.explaination h3 {
+    font-size: 36px;
+    color: #1C98D3;
+    margin-top: 10px;
+
+}
+.explaination p {
+    font-size: 15px;
+    color: #1C98D3;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+.explaination p:first-of-type {
+    font-size: 24px;
+    color: #1C98D3;
+}
+
+.results-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 830px;
+    margin: auto;
+    
+}
+.results-container{
+    margin-top: 20px;
+}
+h2 {
+    font-size: 28px;
+    color: black;
+    margin-bottom: 10px;
+}
+p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.5;
+}
+.skin-concerns {
+    margin-top: 20px;
+    font-weight: bold;
+    color: black;
+}
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+li {
+    margin-bottom: 10px;
+    color: black;
+}
+.btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px 20px; /* Padding for the button */
+    color: white; /* Text color */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.btn-primary {
+    background-color: #75bfe1; /* Primary background color */
+    border: none; /* Remove border */
+    font-weight: bold; /* Bold text */
+    width: 230px; /* Fixed width */
+}
+
+/* Hover effect */
+.btn-primary:hover {
+    background-color: #5aa6c2; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Active state */
+.btn-primary:active {
+    background-color: #4f8da3; /* Even darker shade when clicked */
+    transform: scale(0.95); /* Slightly shrink the button */
+}

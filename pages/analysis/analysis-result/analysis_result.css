@@ -1,0 +1,44 @@
+.analysis-container{
+    justify-content: center;
+}
+.analysis-container .analysis{
+    margin-top: 100px;
+    margin-left: 100px; 
+    font-size: 20px;
+    display: flex;
+    gap: 20px;
+}
+.analysis-results {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    margin-top: 20px; /* Space above the container */
+    margin-bottom: 100px;
+}
+.result {
+    background-color: #C1DFFF; /* Light blue background for results */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the result box */
+    margin-top: 4%; /* Space above result box */
+    width: 900px; /* Limit the width of the result box */
+    height: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.result h3 {
+    font-size: 48px; /* Large font for percentage */
+    color: #0056b3; /* Darker shade for emphasis */
+    margin: 0; /* Remove default margin */
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.result p {
+    font-size: 18px; /* Font size for description */
+    color: #333; /* Darker text for readability */
+    margin-top: 10px; /* Space above paragraph */
+
+}

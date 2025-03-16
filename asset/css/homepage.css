@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    font-family: 'Open Sans', sans-serif;
+}
+.main-wrapper {
+    max-width: 1440px;
+    margin: auto;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.slider-wrapper {
+    width: 1400px;
+    /* You can adjust this based on the size you want */
+    height: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
+    width: 100%;
+    /* Make each slide take up the entire width */
+    transition: transform .4s ease-in-out;
+    flex-shrink: 0;
+    /* Prevents the slide from shrinking */
+}
+
+.slides h1 {
+    position: relative;
+    top: 5rem;
+    left: 1rem;
+    backdrop-filter: blur(7px);
+    width: 9rem;
+    padding: 1rem;
+
+}
+
+.slides img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.dots {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    z-index: 1;
+}
+
+.dots .dot {
+    width: 25px;
+    height: 10px;
+    background-color: #89CFF0;
+    opacity: .2;
+    border-radius: 30px;
+    transition: opacity .2s ease-in-out;
+    cursor: pointer;
+}
+
+@media screen and (max-width:950px) {
+    .slider-wrapper {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:680px) {
+    .slider-wrapper {
+        width: 90%;
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows the items to wrap */
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+    width: 100%;
+    padding: 20px;
+   
+
+}
+
+/* First row: Image first, then Text */
+.card1 {
+    flex-direction: row;
+    /* Image first, then text */
+}
+
+/* Second row: Text first, then Image */
+.card2 {
+    flex-direction: row-reverse;
+    /* Text first, then image */
+}
+
+.card img {
+    width: 400px;
+    /* Adjust image size */
+    height: auto;
+}
+
+.image1 {
+    width: 600px;
+}
+
+.card p {
+    font-size: 16px;
+    margin-right: 200px;
+    /* Remove default margin to control spacing */
+}
+/* 
