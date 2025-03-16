@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
     const images = [
-        "/project_capstone_skincare/GlowMatch-front/asset/image/moisirizer/pink/pink (1).png",
-        "/project_capstone_skincare/GlowMatch-front/asset/image/moisirizer/pink/pink (2).png",
-        "/project_capstone_skincare/GlowMatch-front/asset/image/moisirizer/pink/pink (3).png"
+        "/asset/image/moisirizer/pink/pink (1).png",
+        "/asset/image/moisirizer/pink/pink (2).png",
+        "/asset/image/moisirizer/pink/pink (3).png"
     ];
     const displayedImage = document.getElementById("displayedImage");
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Load navigation bar
-    fetch('/project_capstone_skincare/GlowMatch-front/component/navigation/navigation.html')
+    fetch('/component/navigation/navigation.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('navigation-bar').innerHTML = data;
@@ -45,13 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error('Error loading navigation:', error));
 
     // Load footer
-    fetch('/project_capstone_skincare/GlowMatch-front/component/footer/footer.html')
+    fetch('/component/footer/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer').innerHTML = data;
         })
         .catch(error => console.error('Error loading footer:', error));
-    fetch("/project_capstone_skincare/GlowMatch-front/component/product/sunscreen.html")
+    fetch('/component/product/sunscreen.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById("products-container-sunscreen").innerHTML = data;

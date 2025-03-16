@@ -1,5 +1,5 @@
 .hero {
-    background-image: url('/project_capstone_skincare/GlowMatch-front/asset/image/about-us/korean-girl.png'); /* Change this to your image URL */
+    background-image: url('/asset/image/about-us/korean-girl.png'); /* Change this to your image URL */
     background-size: cover;
     background-position: center;
     height: 100vh; /* Full viewport height */
@@ -48,10 +48,10 @@
     }
 }
 
-p {
+/* p {
     font-size: 23px;
     color: #2E6C89;
-}
+} */
 
 h2 {
     font-size: 64px;

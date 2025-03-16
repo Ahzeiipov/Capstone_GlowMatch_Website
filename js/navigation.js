@@ -10,4 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
             item.parentElement.classList.add("active"); // Add 'active' class to the <li>
         }
     });
+
+    // Create and append the "Connect" button
+    const connectButton = document.createElement("li");
+    connectButton.classList.add("connect");
+    connectButton.innerHTML = '<a href="/connect">Connect</a>';
+    document.querySelector(".navbar .menu").appendChild(connectButton);
 });
