@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Load navigation bar
-    fetch('/component/navigation/navigation.html')
+    fetch('../../component/navigation/navigation.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navigation-bar').innerHTML = data;
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
       .catch(error => console.error('Error loading navigation:', error));
 
     // Load footer
-    fetch('/component/footer/footer.html')
+    fetch('../../component/footer/footer.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer').innerHTML = data;
