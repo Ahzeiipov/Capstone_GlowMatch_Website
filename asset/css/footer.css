@@ -1,4 +1,4 @@
-.footer{
+.footer {
     margin-top: 10px;
     background-color: #C1DFFF;
 }
@@ -46,12 +46,12 @@
     text-decoration: none;
     color: inherit;
     font-size: 24px;
-    
 }
 
 .socials a:hover {
     color: #007bff;
 }
-.the-title{
+
+.the-title {
     margin-bottom: 10px;
 }

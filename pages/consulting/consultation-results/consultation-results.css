@@ -1,0 +1,104 @@
+.title{
+    color: black;
+    margin: 0;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 22px;
+}
+
+
+h1 {
+    font-size: 30px;
+    margin-left: 40px;
+}
+
+li {
+    font-size: 18px;
+    margin-left: 80px;
+}
+
+.results-container {
+    background-color: #89CFF0;
+    margin: 30px 150px 25px 190px;
+    max-width: 1100px;
+    /* Set the max width to 500px */
+    width: 100%;
+    /* Make it responsive */
+    height: 400px;
+    /* Automatically adjust the height based on content */
+    padding: 20px;
+    /* Optional padding for better spacing */
+    word-wrap: break-word;
+    /* Ensures text will wrap correctly */
+    border-radius: 20px;
+
+}
+
+.products-container-recommendation{
+    display: flex;
+    /* Use flexbox to align products in a row */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line if needed */
+    gap: 40px;
+    /* Space between each product */
+    margin-left: 190px;
+    margin-top: 20px;
+}
+
+.products {
+    width: 310px;
+    /* Adjust card width */
+    margin-right: 47px;
+    /* Space between each card */
+    border-radius: 8px;
+    /* Add rounded corners */
+    overflow: hidden;
+    /* Ensures the image does not overflow */
+    background-color: #fff;
+    /* Background color */
+
+}
+
+.products:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+.product-image {
+    width: 100%;
+    /* Make image fill the container width */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px 8px 8px 8px;
+    /* Rounded top corners */
+}
+
+.box {
+    padding: 10px;
+    /* text-align: center; /* Center the text */
+}
+
+.box h4 {
+    font-size: 18px;
+    /* Adjust font size for the name */
+    margin: 10px 0;
+}
+
+.box p {
+    font-size: 14px;
+    /* Adjust font size for the job title */
+    color: #777;
+    /* Lighter color for the text */
+    margin: 0;
+}
+
+.btn-primary {
+    margin: 50px 650px;
+}
+.btn-primary:hover {
+   transform: scale(1.05);
+    /* Slightly enlarge the button on hover */
+
+}
+

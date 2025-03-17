@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../navigation/navigation-bar.css">
+    <link rel="stylesheet" href="../../navigation/navigation-bar.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../../navigation/navigation.js"></script>
+    <link rel="stylesheet" href="http://localhost/project_capstone_skincare_cosulting-/front-end/footer/footer.css">
+    <link rel="stylesheet" href="consulting.css">
+    <script src="footer.js"></script>
+    <title>Consult</title>
+</head>
+
+<body>
+    <section>
+        <div id="navigation-bar"></div>
+        <script src="consulting.js"></script>
+    </section>
+    <section class="consulting">
+        <div class="consulting-container">
+            <div class="box" id="question-container">
+                <h1 id="question-text">Question</h1>
+                <div class="ans-options" id="options-container"></div>
+                <div class="Thebutton">
+                    <button class="Previous-btn" onclick="prevQuestion()"><i class="fa-solid fa-chevron-left"
+                            style="margin-right: 15px;"></i> Previous</button>
+                    <button class="Previous-btn" onclick="nextQuestion()">Next <i class="fa-solid fa-chevron-right"
+                            style="margin-left: 15px;"></i></button>
+                </div>
+            </div>
+    
+            <div class="box" id="recommendation-container">
+                <h2 style="text-align: center; font-size: 25px; color: #082731; margin-top: 20px; text-decoration: underline; font-weight: bold; letter-spacing: 1px;">
+                    Your Skin Type is
+                </h2>
+                
+                <div id="skin-type" style="text-align: center; font-size: 20px; font-weight: 600; color: #444; margin-top: 10px; font-family: 'Times New Roman', Times, serif; letter-spacing: 0.5px; line-height: 1.5;">
+                </div>
+                
+    
+                <h1 style="text-align: center; font-size: 28px; font-weight: bold; color: #082731; margin-top: 30px;">
+                    Recommended Products</h1>
+    
+                <div id="recommendation-content"></div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+        fetch('consulting.php')
+            .then(response => response.json())
+            .then(questions => {
+                window.questions = questions;
+                loadQuestion();
+            });
+
+        let currentQuestionIndex = 0;
+        let selectedAnswers = [];
+        let selectedDescriptions = [];
+
+        function loadQuestion() {
+            const questionIds = Object.keys(window.questions);
+            if (currentQuestionIndex >= questionIds.length) {
+                showRecommendation();
+                return;
+            }
+
+            let questionId = questionIds[currentQuestionIndex];
+            let question = window.questions[questionId];
+
+            document.getElementById('question-text').innerText = question.text;
+
+            let optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            question.answers.forEach(answer => {
+                let button = document.createElement('button');
+                button.classList.add('option-btn');
+                button.innerText = answer.text;
+                button.onclick = () => selectAnswer(answer.recommendation_id, answer.description);  // Pass description
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function selectAnswer(answer_text, description) {
+            // Store the answer text (e.g., "oily") and description
+            selectedAnswers[currentQuestionIndex] = answer_text;  // Store the answer text
+            selectedDescriptions[currentQuestionIndex] = description;  // Store the description
+            nextQuestion();
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
+        function showRecommendation() {
+    let countedRecommendations = {};
+
+    selectedAnswers.forEach(answer => {
+        if (answer) {
+            countedRecommendations[answer] = (countedRecommendations[answer] || 0) + 1;
+        }
+    });
+
+    let bestRecommendation = Object.keys(countedRecommendations).reduce((a, b) =>
+        countedRecommendations[a] > countedRecommendations[b] ? a : b, null
+    );
+
+    if (bestRecommendation) {
+        let selectedSkinType = selectedAnswers[0]; 
+        let selectedSkinTypeDescription = selectedDescriptions[0];
+
+        let skinType, concerns, recommendations;
+
+        switch (selectedSkinType) {
+            case '1':
+                skinType = "Oily";
+                concerns = [
+        "Excess sebum",
+        "Acne",
+        "Enlarged pores"
+    ];                recommendations = "Use lightweight, oil-free moisturizers and salicylic acid-based cleansers.";
+                break;
+            case '2':
+                skinType = "Dry";
+                concerns = "Flaky skin, rough texture, tightness.";
+                recommendations = "Opt for hydrating cleansers, hyaluronic acid serums, and rich moisturizers.";
+                break;
+            case '3':
+                skinType = "Combination";
+                concerns = "Oily T-zone, dry cheeks, uneven skin.";
+                recommendations = "Use a gentle cleanser, lightweight hydration, and balance oil production.";
+                break;
+            case '4':
+                skinType = "Sensitive";
+                concerns = "Redness, irritation, allergic reactions.";
+                recommendations = "Avoid harsh ingredients; use calming, fragrance-free products with aloe vera.";
+                break;
+            default:
+                skinType = "Unknown";
+                concerns = "Not enough data to determine skin type.";
+                recommendations = "Try taking the test again for better results.";
+        }
+
+        document.getElementById('skin-type').innerHTML = `
+            <div class="skin-type-container">
+                <h3>${skinType}</h3>
+                <p>${selectedSkinTypeDescription}</p>
+                <h3>Skin Concerns:</h3>
+                <p>${concerns}</p>
+                <h3>Recommended Care:</h3>
+                <p>${recommendations}</p>
+            </div>
+        `;
+
+        fetch(`consulting.php?recommendation_id=${bestRecommendation}`)
+            .then(response => response.json())
+            .then(data => {
+                let recommendationContent = document.getElementById('recommendation-content');
+                recommendationContent.innerHTML = `
+                    <h3>${data.product_name}</h3>
+                    <img src="${data.picture_url}" alt="${data.product_name}" style="max-width:300px;">
+                    <p>${data.description}</p>
+                `;
+                document.getElementById('question-container').style.display = 'none';
+                document.getElementById('recommendation-container').style.display = 'block';
+            })
+            .catch(error => console.error('Error:', error));
+    } else {
+        document.getElementById('recommendation-content').innerHTML = `<h1>No recommendation found. Try again.</h1>`;
+        document.getElementById('question-container').style.display = 'none';
+        document.getElementById('recommendation-container').style.display = 'block';
+    }
+}
+
+    </script>
+    <section>
+        <div id="footer"></div>
+    </section>
+    <script src="footer.js"></script>
+</body>
+
+</html>

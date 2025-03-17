@@ -10,6 +10,9 @@
 
     <title>Footer</title>
 </head>
+<style> 
+    
+</style>
 
 <body>
     <section class="footer">

@@ -1,16 +1,15 @@
-
+<h3 style="margin: 40px; font-size: 30px;">Foam Cleanser</h3>
 <section class="products-container">
-
     <div class="products">
-        <img src="../../asset/image/sunscreen/SKIN1004 Madagascar Hyalu-CICA Water-Fit Sun Serum SPF50+ PA++++ 50ml, 1pc.png"
+        <img src="../../asset/image/foam/Madagascar Centella Ampoule Foam.png"
             alt="Avatar" class="product-image">
-        <div class="box">
+        <div class="box">1
             <h4><b>SKIN1004 Madagascar Hyalu-CICA Water-Fit Sun Serum SPF50+ PA++++</b></h4>
             <p>Feature Light Moisturizing SPF with Glow</p>
         </div>
     </div>
     <div class="products">
-        <img src="../../asset/image/sunscreen/Centella Air-Fit Suncream Light SPF30 PA++++.png"
+        <img src="../../asset/image/foam/Madagascar Centella Tone Brightening Cleansing Gel Foam.png"
             alt="Avatar" class="product-image">
         <div class="box">
             <h4><b>Centella Air-Fit Suncream Light SPF30 PA++++</b></h4>
@@ -18,7 +17,7 @@
         </div>
     </div>
     <div class="products">
-        <img src="../../asset/image/sunscreen/TONE BRIGHTENING TONE-UP SUNSCREEN.png"
+        <img src="../../asset/image/foam/Poremizing Deep Cleansing Foam.png"
             alt="Avatar" class="product-image">
         <div class="box">
             <h4><b>TONE BRIGHTENING TONE-UP SUNSCREEN</b></h4>
@@ -26,7 +25,7 @@
         </div>
     </div>
     <div class="products">
-        <img src="../../asset/image/sunscreen/Skin1004 Madagascar Centella Air-Fit Suncream Plus SPF 50+ PA++++.png"
+        <img src="../../asset/image/foam/Skin1004 Madagascar Centella Hyalu-Cica Sleeping Pack.png"
             alt="Avatar" class="product-image">
         <div class="box">
             <h4><b>Skin1004 Madagascar Centella Air-Fit Suncream Plus SPF 50+ PA++++</b></h4>
@@ -35,7 +34,7 @@
         </div>
     </div>
     <div class="products">
-        <img src="../../asset/image/sunscreen/Skin1004 Tea-Trica Soothing Sun Milk 50ml.png"
+        <img src="../../asset/image/foam/SKIN1004 Madagascar Centella Tea-Trica BHA Foam.png"
             alt="Avatar" class="product-image">
         <div class="box">
             <h4><b>Skin1004 Tea-Trica Soothing Sun Milk</b></h4>
@@ -43,12 +42,4 @@
                 and dewy finish</p>
         </div>
     </div>
-    <div class="products">
-        <img src="../../asset/image/sunscreen/SKIN1004 Madagascar Centella Poremizing Tinted Sun Cream 50ml.png"
-            alt="Avatar" class="product-image">
-        <div class="box">
-            <h4><b>SKIN1004 Madagascar Centella Poremizing Tinted Sun Cream</b></h4>
-            <p>SKIN1004 Madagascar Centella Poremizing Tinted Sun Cream SPF 50+ PA++++ 50ml - Brand: Skin1004 - Net
-                Content: 50ml</p>
-        </div>
-    </div>
+</section>
