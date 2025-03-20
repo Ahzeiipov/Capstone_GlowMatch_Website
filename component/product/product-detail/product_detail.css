@@ -27,8 +27,6 @@
   gap: 10px;
   margin-top: 10px;
   align-items: center;
-
-
 }
 
 .thumbnail {
@@ -102,14 +100,12 @@
 .product-details {
   width: 50%;
   padding-left: 60px;
-
 }
 
 .product-details h3,
 .product-details p {
   margin-bottom: 30px;
 }
-
 
 /* Tab Navigation */
 .tabs {
@@ -126,8 +122,8 @@
   border-radius: 5px;
   background: #f1f1f1;
   transition: background 0.3s ease;
-
 }
+
 .tab-content ul {
   list-style-type: none; /* Removes default bullets */
   padding: 0; /* Removes default padding */
@@ -155,14 +151,13 @@
   display: block;
 }
 
-
 hr {
   color: #89CFF0;
   margin-bottom: 30px;
   margin-top: 30px;
 }
 
-#texture img{
+#texture img {
   height: 188px;
   width: 188px;
   border-radius: 10px;

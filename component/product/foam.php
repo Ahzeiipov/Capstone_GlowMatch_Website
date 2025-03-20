@@ -1,45 +1,45 @@
+<section>
 <h3 style="margin: 40px; font-size: 30px;">Foam Cleanser</h3>
 <section class="products-container">
-    <div class="products">
-        <img src="../../asset/image/foam/Madagascar Centella Ampoule Foam.png"
-            alt="Avatar" class="product-image">
-        <div class="box">1
-            <h4><b>SKIN1004 Madagascar Hyalu-CICA Water-Fit Sun Serum SPF50+ PA++++</b></h4>
-            <p>Feature Light Moisturizing SPF with Glow</p>
+
+    <a href="product-detail/product_detail.php?id=3" class="product-link"> 
+        <div class="products">
+            <img src="../../asset/image/foam/Madagascar Centella Ampoule Foam.png" alt="Avatar" class="product-image">
+            <div class="box">
+                <h4><b>SKIN1004 Madagascar Centella Ampoule Foam</b></h4>
+                <p>Gentle foam cleanser with soothing Centella and ampoules.</p>
+            </div>
         </div>
-    </div>
-    <div class="products">
-        <img src="../../asset/image/foam/Madagascar Centella Tone Brightening Cleansing Gel Foam.png"
-            alt="Avatar" class="product-image">
-        <div class="box">
-            <h4><b>Centella Air-Fit Suncream Light SPF30 PA++++</b></h4>
-            <p>Daily Light Mineral Sunscreen</p>
+    </a>
+
+    <a href="product-detail/product_detail.php?id=8" class="product-link"> 
+        <div class="products">
+            <img src="../../asset/image/foam/Madagascar Centella Tone Brightening Cleansing Gel Foam.png" alt="Avatar" class="product-image">
+            <div class="box">
+                <h4><b>Madagascar Centella Tone Brightening Cleansing Gel Foam</b></h4>
+                <p>Brightening cleansing foam that revitalizes skin tone.</p>
+            </div>
         </div>
-    </div>
-    <div class="products">
-        <img src="../../asset/image/foam/Poremizing Deep Cleansing Foam.png"
-            alt="Avatar" class="product-image">
-        <div class="box">
-            <h4><b>TONE BRIGHTENING TONE-UP SUNSCREEN</b></h4>
-            <p>Peachy Tinted Niacinamide Sunscreen</p>
+    </a>
+
+    <a href="product-detail/product_detail.php?id=9" class="product-link"> 
+        <div class="products">
+            <img src="../../asset/image/foam/Poremizing Deep Cleansing Foam.png" alt="Avatar" class="product-image">
+            <div class="box">
+                <h4><b>Poremizing Deep Cleansing Foam</b></h4>
+                <p>Deep cleansing foam that unclogs pores and removes impurities.</p>
+            </div>
         </div>
-    </div>
-    <div class="products">
-        <img src="../../asset/image/foam/Skin1004 Madagascar Centella Hyalu-Cica Sleeping Pack.png"
-            alt="Avatar" class="product-image">
-        <div class="box">
-            <h4><b>Skin1004 Madagascar Centella Air-Fit Suncream Plus SPF 50+ PA++++</b></h4>
-            <p>A light physical sunscreen designed for irritated skin to soothe it and bring out its natural glow
-            </p>
+    </a>
+
+    <a href="product-detail/product_detail.php?id=11" class="product-link"> 
+        <div class="products">
+            <img src="../../asset/image/foam/SKIN1004 Madagascar Centella Tea-Trica BHA Foam.png" alt="Avatar" class="product-image">
+            <div class="box">
+                <h4><b>SKIN1004 Madagascar Centella Tea-Trica BHA Foam</b></h4>
+                <p>BHA foam that helps exfoliate and clear skin.</p>
+            </div>
         </div>
-    </div>
-    <div class="products">
-        <img src="../../asset/image/foam/SKIN1004 Madagascar Centella Tea-Trica BHA Foam.png"
-            alt="Avatar" class="product-image">
-        <div class="box">
-            <h4><b>Skin1004 Tea-Trica Soothing Sun Milk</b></h4>
-            <p>This unscented sunscreen is super lightweight and hydrating, and quickly absorbing with a non greasy
-                and dewy finish</p>
-        </div>
-    </div>
+    </a>
+</section>
 </section>
