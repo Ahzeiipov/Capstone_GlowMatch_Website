@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
             nav.classList.remove('scrolled'); // Remove class when at the top
         }
     });
+    // navigation.js
+
+    // Check if the current page is the homepage
+
 });
 
 // // Function to open modal

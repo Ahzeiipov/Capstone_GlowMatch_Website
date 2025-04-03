@@ -14,7 +14,7 @@
     <title>Glow Match</title>
 </head>
 
-<body>
+<body id ="homepage">
     <section>
         <?php include '../../component/navigation/navigation.php'; ?>
     </section>

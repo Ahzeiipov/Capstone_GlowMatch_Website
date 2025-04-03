@@ -11,16 +11,26 @@ nav {
     top: 0;
     width: 100%;
     height: 75px;
+    background: white; /* Start with transparent background */
+    z-index: 100;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+#homepage nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 75px;
     background: transparent; /* Start with transparent background */
     z-index: 100;
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
-nav.scrolled {
+#homepage nav.scrolled {
     background-color: white; /* Set the background to white when scrolled */
 }
 
-nav.scrolled .navbar .menu li a {
+#homepage nav.scrolled .navbar .menu li a {
     color: rgb(95, 93, 93); /* Default gray color */
 
 }
@@ -44,7 +54,7 @@ nav .navbar .menu {
     margin-right: 20px; /* Add space between menu items */
 }
 
-.navbar .menu li a {
+#homepage .navbar .menu li a {
     color:  white;
     font-size: 17px;
     font-weight: 400;
@@ -53,7 +63,15 @@ nav .navbar .menu {
     margin-top: 10px; /* Space between links and the top */
     padding-bottom: 5px; /* Add padding for better spacing */
 }
-
+.navbar .menu li a {
+    color: rgb(95, 93, 93); /* Default gray color */
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for hover and active states */
+    margin-top: 10px; /* Space between links and the top */
+    padding-bottom: 5px; /* Add padding for better spacing */
+}
 .navbar .menu li a:hover {
     color: #62aada;
     border-bottom: 3px solid #62aada; /* Apply underline only when hovered */

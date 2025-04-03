@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="consulting_wellcome_page.css">
     <script src="consulting_wellcome_page.js"></script>
     <title>Analyze</title>
-</head>+
+</head>
 <body>
    <?php include '../../component/navigation/navigation.php' ?>
     <section class="consulting_wellcome_page">

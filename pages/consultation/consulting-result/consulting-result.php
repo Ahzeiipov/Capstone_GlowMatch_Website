@@ -9,14 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="consultation-results.js"> </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
     <link rel="stylesheet" href="../../../asset/css/consulting-result.css">
     <link rel="stylesheet" href="../../asset/global-style/product-recomend.css">
+    <link rel="stylesheet" href="../../../asset/css/navigation.css">
+    <link rel="stylesheet" href="../../../asset/css/footer.css">
+    <link rel="stylesheet" href="../../../asset/css/drop_down_menu.css">
+
+
     <title>Consultation results</title>
 </head>
 
 <body>
-    <div id="navigation-bar"></div>
+    <?php include '../../../component/navigation/navigation.php' ?>
     <div class="message-title">
         <div class="message">Your skin type is</div>
         <div class="underline"></div>
@@ -98,10 +103,8 @@
         style="background-color:#75bfe1; border-width: 0px; font-weight: bold; width: 230px;">
         Re-Consulting</a>
 
-    <section>
-        <div id="footer"></div>
-    </section>
-    <script src="footer.js"></script>
+    <?php include '../../../component/footer/footer.php' ?>
+
 </body>
 
 </html>
