@@ -45,5 +45,5 @@ document.addEventListener("DOMContentLoaded", () => {
         moveSlide();
     };
 
-    setInterval(autoPlaySlide, 6000);
+    setInterval(autoPlaySlide, 10000);
 });

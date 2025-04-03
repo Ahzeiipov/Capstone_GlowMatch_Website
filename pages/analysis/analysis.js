@@ -1,17 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Load navigation bar
-    fetch('../../component/navigation/navigation.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navigation-bar').innerHTML = data;
-      })
-      .catch(error => console.error('Error loading navigation:', error));
 
-    // Load footer
-    fetch('../../component/footer/footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      })
-      .catch(error => console.error('Error loading footer:', error));
-});
+function openModal() {
+    document.getElementById('modal').style.display = 'flex';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    var modal = document.getElementById('modal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}

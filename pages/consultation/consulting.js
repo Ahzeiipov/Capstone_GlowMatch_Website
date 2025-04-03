@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
       .catch(error => console.error('Error loading navigation:', error));
 
     // Load footer
-    fetch('../../component/footer/footer.html')
+    fetch('../../component/footer/footer.php')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer').innerHTML = data;

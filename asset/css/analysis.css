@@ -38,7 +38,7 @@ textarea::placeholder {
     cursor: pointer; /* Add a pointer cursor on hover */
     font-size: 16px; /* Increase the font size */
     margin-top: 10px; /* Add some space at the top */
-    margin: 10px 305px 20px 305px;
+    margin: 10px 300px 20px 320px;
 }
 .btn:hover {
     transform: scale(1.05); /* Slightly enlarge the button on hover */

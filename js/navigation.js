@@ -1,19 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const menuItems = document.querySelectorAll(".menu li a"); // Select all menu links
-    const currentPage = window.location.pathname; // Get the current page URL
+    // Select all menu links
+    const menuItems = document.querySelectorAll(".menu li a");
+    // Get the current page URL path
+    const currentPage = window.location.pathname;
 
+    // Highlight the active menu item
     menuItems.forEach((item) => {
-        // Normalize both the URL path and the link path
-        const linkPath = new URL(item.href, window.location.origin).pathname;
-
-        if (currentPage === linkPath) {
-            item.parentElement.classList.add("active"); // Add 'active' class to the <li>
+        const linkPath = new URL(item.href).pathname; // Ensure it's an absolute URL and get the pathname
+        if (currentPage === linkPath || currentPage === linkPath.replace(/\/$/, "")) {
+            item.parentElement.classList.add("active"); // Add active class to the parent <li>
         }
     });
 
-    // Create and append the "Connect" button
-    const connectButton = document.createElement("li");
-    connectButton.classList.add("connect");
-    connectButton.innerHTML = '<a href="/connect">Connect</a>';
-    document.querySelector(".navbar .menu").appendChild(connectButton);
+    // Add scroll functionality to change navbar background color
+    window.addEventListener('scroll', function () {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 0) {
+            nav.classList.add('scrolled'); // Add class when scrolled down
+        } else {
+            nav.classList.remove('scrolled'); // Remove class when at the top
+        }
+    });
 });
+
+// // Function to open modal
+// function openModal() {
+//     console.log("openModal function called");
+//     document.getElementById("modal").classList.add("active");
+// }
+
+// // Function to close modal when clicking outside
+// window.onclick = function (event) {
+//     const modal = document.getElementById("modal");
+//     if (event.target === modal) {
+//         modal.classList.remove("active");
+//     }
+// };
+
+// // Function to close modal when clicking the close button
+// function closeModal() {
+//     document.getElementById("modal").classList.remove("active");
+// }
