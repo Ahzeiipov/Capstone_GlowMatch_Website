@@ -34,12 +34,12 @@
         </li>
 
         <li>
-          <?php if (!isset($_SESSION['user_id'])): ?>
-            <a href="javascript:void(0);" onclick="openModal()">Consulting</a>
-          <?php else: ?>
-            <a href="http://localhost/GlowMatch(1)/screen/wellcome_page/consulting_wellcome_page.php">Consulting</a>
-          <?php endif; ?>
-        </li>
+        <?php if (!isset($_SESSION['user_id'])): ?>
+          <a href="javascript:void(0);" onclick="openModal()">Consulting</a>
+        <?php else: ?>
+          <a href="http://localhost/GlowMatch(1)/pages/consultation/consulting-result/check_consulting.php">Consulting</a>
+        <?php endif; ?>
+      </li>
 
         <li>
           <a href="http://localhost/GlowMatch(1)/pages/about-us/about_us.php">About us</a>

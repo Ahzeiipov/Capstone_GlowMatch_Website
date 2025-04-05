@@ -16,14 +16,136 @@
     <?php include '../../../component/navigation/navigation.php'; ?>
 
     <?php
-    // Start the session or handle POST data
+    // Start the session
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // Check if user_id is set in session, redirect if not
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: /php/GlowMatch(1)/pages/homepage/homepage.php");
+        exit();
+    }
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "skincareconsulting";
+
+    $conn = new mysqli($servername, $username, $password, $database);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $userId = $_SESSION['user_id'];
+
+    // Check if recommendation data is posted (new consultation)
     if (isset($_POST['recommendation_data'])) {
         $data = json_decode($_POST['recommendation_data'], true);
     } else {
-        $data = null;
-    }
-    ?>
+        // Fetch existing data from the database
+        $data = [];
 
+        // Fetch skin condition
+        $sql = "SELECT SkinType, AcneSeverity, DarkSpotsSeverity, LargePoresSeverity 
+                FROM skincondition WHERE UserID = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($row = $result->fetch_assoc()) {
+            $data['skin_type'] = $row['SkinType'];
+            $data['acne_severity'] = $row['AcneSeverity'];
+            $data['dark_spots_severity'] = $row['DarkSpotsSeverity'];
+            $data['large_pores_severity'] = $row['LargePoresSeverity'];
+        }
+        $stmt->close();
+
+        // Fetch skin descriptions
+        $sql = "SELECT sd.SkinCondition, sd.Description
+                FROM skincondition sc
+                JOIN skindescription sd
+                WHERE sc.UserID = ?
+                AND (
+                    sd.SkinCondition = sc.SkinType
+                    OR sd.SkinCondition = CONCAT(sc.AcneSeverity, ' Acne')
+                    OR sd.SkinCondition = CONCAT(sc.DarkSpotsSeverity, ' Dark Spots')
+                    OR sd.SkinCondition = CONCAT(sc.LargePoresSeverity, ' Large Pores')
+                )";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data['descriptions'] = [];
+        while ($row = $result->fetch_assoc()) {
+            $data['descriptions'][] = [
+                'SkinCondition' => $row['SkinCondition'],
+                'Description' => $row['Description']
+            ];
+        }
+        $stmt->close();
+
+        // Fetch all matching products for the skin type (same as original logic)
+        $skinType = $data['skin_type'];
+        $severityLevels = [
+            'Acne' => $data['acne_severity'],
+            'Dark Spots' => $data['dark_spots_severity'],
+            'Large Pores' => $data['large_pores_severity']
+        ];
+
+        $sql = "SELECT ProductID, ProductName, ShortDesrciption, SkinType, ConcernType, ProductImage3
+                FROM products 
+                WHERE FIND_IN_SET(?, SkinType) > 0";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $skinType);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $data['products'] = [];
+        $maxPossibleScore = 1; // Skin type match
+        foreach ($severityLevels as $severity) {
+            if ($severity != 'None') {
+                $maxPossibleScore++;
+            }
+        }
+
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $matchScore = 0;
+                $concernTypes = explode(',', $row['ConcernType']);
+
+                // Skin type match
+                if (stripos($row['SkinType'], $skinType) !== false) {
+                    $matchScore++;
+                }
+
+                // Concern matches
+                foreach ($concernTypes as $concern) {
+                    if (strpos($concern, 'Acne') !== false && $severityLevels['Acne'] != 'None' && strpos($concern, $severityLevels['Acne']) !== false) {
+                        $matchScore++;
+                    }
+                    if (strpos($concern, 'Dark Spots') !== false && $severityLevels['Dark Spots'] != 'None' && strpos($concern, $severityLevels['Dark Spots']) !== false) {
+                        $matchScore++;
+                    }
+                    if (strpos($concern, 'Large Pores') !== false && $severityLevels['Large Pores'] != 'None' && strpos($concern, $severityLevels['Large Pores']) !== false) {
+                        $matchScore++;
+                    }
+                }
+
+                $matchPercentage = ($maxPossibleScore > 0) ? ($matchScore / $maxPossibleScore) * 100 : 0;
+                $row['match_percentage'] = round($matchPercentage, 2);
+                if (!empty($row['ProductImage3'])) {
+                    $row['ProductImage3'] = base64_encode($row['ProductImage3']);
+                }
+                $data['products'][] = $row;
+            }
+        }
+        $stmt->close();
+    }
+
+    $conn->close();
+    ?>
+    
     <div class="message-title">
         <div class="message">Your skin type is</div>
         <div class="underline"></div>
@@ -78,7 +200,7 @@
         <?php endif; ?>
     </section>
 
-    <a href="../consulting.php" class="btn btn-primary btn-lg" role="button" style="background-color:#75bfe1; border-width: 0px; font-weight: bold; width: 230px;">
+    <a href="reconsult.php" class="btn btn-primary btn-lg" role="button" style="background-color:#75bfe1; border-width: 0px; font-weight: bold; width: 230px;">
         Re-Consulting
     </a>
 
