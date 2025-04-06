@@ -39,19 +39,17 @@
             <img src="../../asset/image/gm.png" alt="Nature" id="image1">
             <p> The capstone project by six <strong style="color:rgb(28, 32, 95);">CADT</strong> University students, guided by <strong style="color:rgb(50, 51, 55);">
                     Dr. Ly Rattana</strong>, demonstrates the integration of software engineering and data science. 
-                    Team members Sambo Sopheapkline, Pov Veansa, Pich Punloue, Phoeun Phinnaroth, Poch Sreypov, 
+                    Team members Sambo Sopheakline, Pov Veasna, Pich Punloue, Phoeun Phinnaroth, Poch Sreypov, 
                     and Rotha Munypothida pooled their skills to address industry challenges, showcasing their 
                     commitment to practical application of academic knowledge and the importance of collaboration
                      and mentorship in developing innovative solutions.</p>
         </div>
         <div class="card reverse">
             <img src="../../asset/image/about-us/korean-style.png" alt="Nature" id="image2">
-            <p>The GlowMatch website is a dynamic online platform for meaningful connections, whether
-                 for dating, friendship, or networking. With a user-friendly interface and personalized
-                  matching algorithms, it connects individuals based on shared interests and values.
-                   The platform prioritizes safety and encourages community engagement through 
-                   interactive features, creating a unique and inclusive space for users to build 
-                   relationships securely.</p>
+            <p>helping users identify their skin types and specific concerns through personalized assessments. 
+                By analyzing individual skin characteristics, the platform offers tailored product recommendations 
+                and skincare routines. This approach empowers users to make informed choices about their skincare, 
+                ensuring they find effective solutions that cater to their unique needs for healthier skin.</p>
         </div>
     </section>
 
