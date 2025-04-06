@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // Check if user_id is set in session, redirect if not
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /php/GlowMatch(1)/pages/homepage/homepage.php");
+    header("Location: /php/GlowMatch/pages/homepage/homepage.php");
     exit();
 }
 
@@ -42,6 +42,6 @@ $stmtSkinCondition->close();
 $conn->close();
 
 // Redirect to the consultation page
-header("Location: /GlowMatch(1)/pages/consultation/consulting.php");
+header("Location: /php/GlowMatch/pages/consultation/consulting.php");
 exit();
 ?>

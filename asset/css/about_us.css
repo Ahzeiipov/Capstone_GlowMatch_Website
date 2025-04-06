@@ -1,5 +1,5 @@
 .hero {
-    background-image: url('/asset/image/about-us/korean-girl.png'); /* Change this to your image URL */
+    background-image: url('/php/GlowMatch/asset/image/about-us/korean-girl.jpeg'); /* Use absolute path */
     background-size: cover;
     background-position: center;
     height: 100vh; /* Full viewport height */
@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    color: white;
+    color: #2E6C89;
 }
 
 .overlay {

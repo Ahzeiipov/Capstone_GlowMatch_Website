@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="../../asset/global-style/product.css">
     <script src="about-us.js" defer></script>
     <link rel="stylesheet" href="../../asset/css/navigation.css">
-    <script src="../../js/navigation.js"></script>
    
-    <title>GlowMatch - About Us</title>
+    <title>Glow Match</title>
 </head>
 
 <body>
@@ -51,7 +50,9 @@
         </div>
     </section>
 
-    <div id="footer"></div>
+    <section>
+        <?php include '../../component/footer/footer.php' ?>
+    </section>
 </body>
 
 </html>

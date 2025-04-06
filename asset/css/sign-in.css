@@ -5,7 +5,7 @@
   max-width: 850px;
   width: 100%;
   background: #fff;
-  padding: 40px 30px;
+  padding: 40px 20px; /* Reduced padding for better spacing */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   perspective: 2700px;
 }
@@ -132,7 +132,7 @@
   align-items: center;
   height: 50px;
   width: 100%;
-  margin: 10px 0;
+  margin: 15px 0; /* Increased margin for better spacing between input fields */
   position: relative;
 }
 
@@ -141,7 +141,7 @@
   width: 100%;
   outline: none;
   border: none;
-  padding: 0 30px;
+  padding: 0 20px; /* Reduced padding for a cleaner look */
   font-size: 16px;
   font-weight: 500;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
@@ -163,6 +163,7 @@
   font-size: 14px;
   font-weight: 500;
   color: #333;
+  margin-top: 15px; /* Added margin for better spacing */
 }
 
 .forms .form-content .text a {
@@ -175,20 +176,20 @@
 
 .forms .form-content .button {
   color: #fff;
-  margin-top: 40px;
+  margin-top: 30px; /* Reduced margin for better alignment */
 }
 
 .forms .form-content .button input {
   color: #fff;
   background: #89CFF0;
   border-radius: 6px;
-  padding: 0;
+  padding: 10px 20px; /* Adjusted padding for a balanced button size */
   cursor: pointer;
   transition: all 0.4s ease;
 }
 
 .forms .form-content .button input:hover {
-  background: #007BFF; /* Change hover color for better visibility */
+  background: #62aada; /* Change hover color for better visibility */
 }
 
 .forms .form-content label {

@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="../../asset/global-style/product-recomend.css">
     <link rel="stylesheet" href="../../../asset/css/navigation.css">
     <link rel="stylesheet" href="../../../asset/css/footer.css">
+    <link rel="shortcut icon" href="../../../asset/image/gm.png" type="x-icon">
     <link rel="stylesheet" href="../../../asset/css/drop_down_menu.css">
-    <title>Consultation Results</title>
+    <title>Glow Match</title>
 </head>
 <body>
     <?php include '../../../component/navigation/navigation.php'; ?>
@@ -23,7 +24,7 @@
 
     // Check if user_id is set in session, redirect if not
     if (!isset($_SESSION['user_id'])) {
-        header("Location: /php/GlowMatch(1)/pages/homepage/homepage.php");
+        header("Location: /php/GlowMatch/pages/homepage/homepage.php");
         exit();
     }
 
@@ -153,8 +154,10 @@
 
     <div class="explaination">
         <?php if ($data): ?>
-            <p style="text-align: center; font-size: 20px; font-weight: 600; color: #444;">
-                Skin Type: <?php echo htmlspecialchars($data['skin_type']); ?><br>
+            <p style="text-align: center; font-size: 18px; font-weight: 600; color: #444;">
+                <span style="font-size: 28px; font-weight: bold; color: rgb(66, 135, 181);">
+                ✧˖˚<?php echo htmlspecialchars($data['skin_type']); ?>₊˚⊹
+                </span><br>
                 Acne Severity: <?php echo htmlspecialchars($data['acne_severity']); ?><br>
                 Dark Spots Severity: <?php echo htmlspecialchars($data['dark_spots_severity']); ?><br>
                 Large Pores Severity: <?php echo htmlspecialchars($data['large_pores_severity']); ?>
@@ -166,11 +169,19 @@
 
     <section class="results-container">
         <?php if ($data && isset($data['descriptions']) && !isset($data['descriptions']['error'])): ?>
-            <h3>Your Skin Descriptions:</h3>
+            <h3 style="color:rgb(76, 134, 173);">Your Skin Descriptions:</h3>
             <ul>
-                <?php foreach ($data['descriptions'] as $desc): ?>
-                    <li><strong><?php echo htmlspecialchars($desc['SkinCondition']); ?>:</strong> <?php echo htmlspecialchars($desc['Description']); ?></li>
-                <?php endforeach; ?>
+                <?php 
+                $displayedConditions = []; // Array to track displayed SkinConditions
+                foreach ($data['descriptions'] as $desc): 
+                    if (!in_array($desc['SkinCondition'], $displayedConditions)): // Check if SkinCondition is already displayed
+                        $displayedConditions[] = $desc['SkinCondition']; // Add to the displayed list
+                ?>
+                    <li><strong style="color:rgb(51, 106, 143);" accesskey=""><?php echo htmlspecialchars($desc['SkinCondition']); ?>:</strong> <?php echo htmlspecialchars($desc['Description']); ?></li>
+                <?php 
+                    endif; 
+                endforeach; 
+                ?>
             </ul>
         <?php elseif ($data && isset($data['descriptions']['error'])): ?>
             <p>Error: <?php echo htmlspecialchars($data['descriptions']['error']); ?></p>
@@ -179,14 +190,18 @@
         <?php endif; ?>
     </section>
 
-    <h4 style="margin-left: 190px; font-size: 30px;">Recommendation</h4>
+    <h4 style="margin-left: 190px; font-size: 30px;" class="underline" >Recommendation</h4>
     <section class="products-container-recommendation">
         <?php if ($data && !empty($data['products']) && !isset($data['products'][0]['error'])): ?>
             <?php foreach ($data['products'] as $product): ?>
                 <div class="product-card">
-                    <h3><?php echo htmlspecialchars($product['ProductName']); ?></h3>
+                    <a href="http://localhost/php/GlowMatch/pages/homepage/product/product-detail/product_detail.php?id=<?php echo htmlspecialchars($product['ProductID']); ?>" style="text-decoration: none; color: inherit;">
+                        <h3><?php echo htmlspecialchars($product['ProductName']); ?></h3>
+                    </a>
                     <?php if ($product['ProductImage3']): ?>
-                        <img src="data:image/jpeg;base64,<?php echo htmlspecialchars($product['ProductImage3']); ?>" alt="<?php echo htmlspecialchars($product['ProductName']); ?>" style="max-width: 200px; height: auto; margin: 10px auto; display: block;">
+                        <a href="http://localhost/php/GlowMatch/pages/homepage/product/product-detail/product_detail.php?id=<?php echo htmlspecialchars($product['ProductID']); ?>">
+                            <img src="data:image/jpeg;base64,<?php echo htmlspecialchars($product['ProductImage3']); ?>" alt="<?php echo htmlspecialchars($product['ProductName']); ?>" style="max-width: 200px; height: auto; margin: 10px auto; display: block;">
+                        </a>
                     <?php else: ?>
                         <p>No image available</p>
                     <?php endif; ?>

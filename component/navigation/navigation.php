@@ -1,4 +1,4 @@
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/GlowMatch(1)/include/database-connection/page_logic.php');
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/php/GlowMatch/include/database-connection/page_logic.php');
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   <link rel="stylesheet" href="../../asset/css/navigation.css">
+  <link rel="shortcut icon" href="../../asset/image/gm.png" type="x-icon">
   <link rel="stylesheet" href="../../asset/fonts/style.css">
   <link rel="stylesheet" href="../../asset/css/button.css">
   <link rel="stylesheet" href="../../asset/css/drop_down_menu.css">
@@ -20,29 +21,29 @@
 <body>
   <nav>
     <div class="navbar">
-      <img src="/Glowmatch(1)/asset/image/logo/logo.png" class="img-responsive" alt="Image" width="200" height="70" style="margin-top: 10px;">
+      <img src="/php/Glowmatch/asset/image/logo/logo.png" class="img-responsive" alt="Image" width="200" height="70" style="margin-top: 10px;">
       <ul class="menu">
-        <li class="home">
-          <a href="http://localhost/GlowMatch(1)/pages/homepage/homepage.php">Home</a>
+        <li class="home <?php echo basename($_SERVER['PHP_SELF']) == 'homepage.php' ? 'active' : ''; ?>">
+          <a href="/php/GlowMatch/pages/homepage/homepage.php">Home</a>
         </li>
         <li>
           <?php if (!isset($_SESSION['user_id'])): ?>
             <a href="javascript:void(0);" onclick="openModal()">Analyze</a>
           <?php else: ?>
-            <a href="http://localhost/GlowMatch(1)/pages/analysis/analysis.php">Analyze</a>
+            <a href="http://localhost/php/GlowMatch/pages/analysis/analysis.php">Analyze</a>
           <?php endif; ?>
         </li>
 
         <li>
         <?php if (!isset($_SESSION['user_id'])): ?>
-          <a href="javascript:void(0);" onclick="openModal()">Consulting</a>
-        <?php else: ?>
-          <a href="http://localhost/GlowMatch(1)/pages/consultation/consulting-result/check_consulting.php">Consulting</a>
-        <?php endif; ?>
-      </li>
+           <a href="javascript:void(0);" onclick="openModal()">Consulting</a>
+         <?php else: ?>
+           <a href="http://localhost/php/GlowMatch/pages/consultation/consulting-result/check_consulting.php">Consulting</a>
+         <?php endif; ?>
+       </li>
 
         <li>
-          <a href="http://localhost/GlowMatch(1)/pages/about-us/about_us.php">About us</a>
+          <a href="http://localhost/php/GlowMatch/pages/about-us/about_us.php">About us</a>
         </li>
 
         <li>
@@ -51,7 +52,7 @@
               <a href="#" class="dropbtn"><i class="fas fa-user"></i> Profile</a>
               <div class="dropdown-content">
                 <a href="../../pages/profile/edit_profile.php">Edit Profile</a>
-                <a href="../../include/authentication/logout.php">Logout</a>
+                <a href="/php/GlowMatch/include/authentication/logout.php">Logout</a>
               </div>
             </div>
           <?php else: ?>

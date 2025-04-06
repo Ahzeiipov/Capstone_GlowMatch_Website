@@ -20,7 +20,7 @@ $result = $conn->query($sql);
                 ?>
                 <div class="products">
                     <!-- Clickable Image that redirects to product_detail.php with Product ID -->
-                    <a href="http://localhost/GlowMatch(1)/pages/homepage/product/product-detail/product_detail.php?id=<?php echo htmlspecialchars($row['ProductID']); ?>">
+                    <a href="http://localhost/php/GlowMatch/pages/homepage/product/product-detail/product_detail.php?id=<?php echo htmlspecialchars($row['ProductID']); ?>">
 
                         <img src="data:image/jpeg;base64,<?php echo base64_encode($row['ProductImage3']); ?>" 
                              alt="<?php echo htmlspecialchars($row['ProductName']); ?>" 

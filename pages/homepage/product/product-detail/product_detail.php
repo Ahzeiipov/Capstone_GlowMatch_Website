@@ -18,6 +18,7 @@ include '../../../../include/productdetail-con/product-detail-con.php';
     <link rel="stylesheet" href="../../../../asset/css/footer.css">
     <link rel="stylesheet" href="../../../../asset/global-style/product.css">
     <link rel="stylesheet" href="../../../../asset/css/product_detail.css">
+    <link rel="shortcut icon" href="../../../../asset/image/gm.png" type="x-icon">
     <title>
        Product Details
     </title>
@@ -29,7 +30,7 @@ include '../../../../include/productdetail-con/product-detail-con.php';
     <div class="image-gallery">
     <div class="main-image">
         <img id="displayedImage" 
-             src="data:image/jpeg;base64,<?php echo base64_encode($row['ProductImage2']); ?>" 
+             src="data:image/jpeg;base64,<?php echo base64_encode($row['ProductImage3']); ?>" 
              alt="<?php echo htmlspecialchars($row['ProductName']); ?>">
     </div>
 

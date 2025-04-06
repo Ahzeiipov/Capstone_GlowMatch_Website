@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /php/GlowMatch(1)/pages/homepage/homepage.php");
+    header("Location:/php/GlowMatch/pages/homepage/homepage.php");
     exit();
 }
 
@@ -34,7 +34,7 @@ if (isset($_POST['update_profile'])) {
 
     if ($result) {
         $_SESSION['message'] = 'Profile Updated Successfully.';
-        header("Location: /php/GlowMatch(1)/pages/homepage/homepage.php");
+        header("Location:/php/GlowMatch/pages/homepage/homepage.php");
         exit();
     } else {
         echo "<script>alert('Profile Not Updated.')</script>";
@@ -50,6 +50,7 @@ if (isset($_POST['update_profile'])) {
     <title>Edit Profile</title>
     <link rel="stylesheet" href="../../asset/css/profile.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../asset/image/gm.png" type="x-icon">
 </head>
 
 <body>
@@ -68,7 +69,7 @@ if (isset($_POST['update_profile'])) {
                 <input type="submit" name="update_profile" value="Update Profile">
             </div>
             <div class="button input-box">
-                <input type="button" value="Cancel" onclick="window.location.href='/php/GlowMatch(1)/pages/homepage/homepage.php';">
+                <input type="button" value="Cancel" onclick="window.location.href='/php/GlowMatch/pages/homepage/homepage.php';">
             </div>
         </form>
     </div>

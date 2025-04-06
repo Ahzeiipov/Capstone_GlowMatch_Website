@@ -15,7 +15,7 @@ if(isset($_POST['submit_signup'])){
   if($result){
     $_SESSION['user_id'] = $con->insert_id; // Store user ID in session
     $_SESSION['message'] = 'User Registered Successfully.';
-    header("Location:/GlowMatch(1)/pages/homepage/homepage.php");
+    header("Location:/php/GlowMatch/pages/homepage/homepage.php");
     exit();
   }else{
     echo "<script>alert('User Not Registered.')</script>";
@@ -38,16 +38,16 @@ if(isset($_POST['submit_login'])){
     if(password_verify($password, $hashed_password)){
       $_SESSION['user_id'] = $user_id; // Store user ID in session
       $_SESSION['message'] = 'Login Successful.';
-      header("Location: /GlowMatch(1)/pages/homepage/homepage.php");
+      header("Location: /php/GlowMatch/pages/homepage/homepage.php");
       exit();
     } else {
       $_SESSION['login_error'] = 'Invalid Email or Password.';
-      header("Location: /GlowMatch(1)/pages/homepage/homepage.php");
+      header("Location: /php/GlowMatch/pages/homepage/homepage.php");
       exit();
     }
   } else {
     $_SESSION['login_error'] = 'Invalid Email or Password.';
-    header("Location: /GlowMatch(1)/pages/homepage/homepage.php");
+    header("Location: /php/GlowMatch/pages/homepage/homepage.php");
     exit();
   }
 }

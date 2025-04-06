@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="../../../asset/css/navigation.css">
     <link rel="stylesheet" href="../../../asset/css/drop_down_menu.css">
     <script src="analysis_result.js"></script>  
+    <link rel="shortcut icon" href="../../asset/image/gm.png" type="x-icon">
     <link rel="stylesheet" href="analysis_result.css">
-    <title>Analyze Results</title>
+    <title>Glow Match</title>
 </head>
 <body>
     <!-- Navigation -->
@@ -38,7 +39,7 @@
             <h3><?php echo number_format($matchPercentage, 2); ?>%</h3>
             <p><?php echo htmlspecialchars($description); ?></p>
             <?php if (!empty($matchedIngredients)): ?>
-                <p>Matched Ingredients: <?php echo htmlspecialchars(implode(', ', $matchedIngredients)); ?></p>
+                <p><strong>Matched Ingredients:</strong> <?php echo htmlspecialchars(implode(', ', $matchedIngredients)); ?></p>
             <?php endif; ?>
         </div>
     </section>

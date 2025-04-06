@@ -17,7 +17,7 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="../../asset/image/card-image/card1.jpeg" alt="">
+        <img src="../../asset/image/card-image/card2.jpeg" alt="">
 
         <div class="text">
           <span class="text-1">Every new friend is a <br> new adventure</span>
@@ -47,7 +47,6 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password" placeholder="Enter your password" required>
               </div>
-              <div class="text"><a href="forgot_password.php">Forgot password</a></div>
               <div class="button input-box">
                 <input type="submit" name="submit_login" value="Submit">
               </div>

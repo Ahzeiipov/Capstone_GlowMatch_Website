@@ -21,16 +21,79 @@ h1 {
     margin-left: 80px;
 }
 
-/*  */
-
-.products-container-recommendation{
+/* Container for product recommendations */
+.products-container-recommendation {
     display: flex;
-    /* Use flexbox to align products in a row */
-    flex-wrap: wrap;
-    /* Allow items to wrap to the next line if needed */
-    gap: 40px;
-    /* Space between each product */
-    margin-left: 190px;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 20px; /* Space between product cards */
+    justify-content: center; /* Center the product cards */
+    margin: 20px auto; /* Add margin around the container */
+    padding: 20px; /* Add padding for spacing */
+    max-width: 1200px; /* Limit the container width */
+}
+
+/* Individual product card */
+.product-card {
+    background-color: #fff; /* White background for the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 280px; /* Fixed width for each card */
+    padding: 15px; /* Padding inside the card */
+    text-align: center; /* Center-align the content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for product cards */
+.product-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Product image */
+.product-card img {
+    width: 100%; /* Make the image fill the card width */
+    max-width: 200px; /* Set a maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+    margin-bottom: 15px; /* Space below the image */
+    object-fit: cover; /* Ensure the image fits within the defined dimensions */
+}
+
+/* Product title */
+.product-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Product description */
+.product-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5; /* Improve readability */
+}
+
+/* Match percentage */
+.product-card .match-percentage {
+    font-size: 16px;
+    font-weight: bold;
+    color: #082731;
+    margin-bottom: 10px;
+}
+
+/* Product concerns */
+.product-card .product-concerns {
+    font-size: 14px;
+    color: #777;
+}
+
+/* No recommendations message */
+.products-container-recommendation .no-recommendations {
+    font-size: 16px;
+    color: #444;
+    text-align: center;
     margin-top: 20px;
 }
 
@@ -207,3 +270,15 @@ li {
     background-color: #4f8da3; /* Even darker shade when clicked */
     transform: scale(0.95); /* Slightly shrink the button */
 }
+
+@media (max-width: 768px) {
+    .products-container-recommendation {
+        flex-direction: column; /* Stack the cards vertically */
+        align-items: center; /* Center-align the cards */
+    }
+
+    .product-card {
+        width: 90%; /* Make the cards take up most of the screen width */
+    }
+}
+

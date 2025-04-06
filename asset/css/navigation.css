@@ -54,6 +54,10 @@ nav .navbar .menu {
     margin-right: 20px; /* Add space between menu items */
 }
 
+#homepage .navbar .menu li.active a {
+    color:  #62aada;
+}
+
 #homepage .navbar .menu li a {
     color:  white;
     font-size: 17px;
@@ -63,6 +67,8 @@ nav .navbar .menu {
     margin-top: 10px; /* Space between links and the top */
     padding-bottom: 5px; /* Add padding for better spacing */
 }
+
+
 .navbar .menu li a {
     color: rgb(95, 93, 93); /* Default gray color */
     font-size: 17px;
@@ -72,12 +78,17 @@ nav .navbar .menu {
     margin-top: 10px; /* Space between links and the top */
     padding-bottom: 5px; /* Add padding for better spacing */
 }
+
+/* Hover effect for all links */
 .navbar .menu li a:hover {
     color: #62aada;
     border-bottom: 3px solid #62aada; /* Apply underline only when hovered */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition */
 }
 
+/* Active link styling */
 .navbar .menu li.active a {
+    color: #62aada; /* Active link text color */
     border-bottom: 3px solid #62aada; /* Highlight active link */
     font-weight: 600; /* Make it visually distinct */
     text-decoration: none; /* Remove browser's default underline */

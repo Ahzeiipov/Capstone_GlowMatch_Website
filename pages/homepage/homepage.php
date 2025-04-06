@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../../js/slider.js"></script>
+    <link rel="shortcut icon" href="../../asset/image/gm.png" type="x-icon">
     <script src="../../js/navigation.js"></script>
     <link rel="stylesheet" href="../../asset/css/homepage.css">
     <link rel="stylesheet" href="../../asset/global-style/product.css">
@@ -15,9 +16,7 @@
 </head>
 
 <body id ="homepage">
-    <section>
-        <?php include '../../component/navigation/navigation.php'; ?>
-    </section>
+    <?php include '../../component/navigation/navigation.php'; ?>
     <section>
         <div class="main-wrapper">
             <div class="slider-wrapper">

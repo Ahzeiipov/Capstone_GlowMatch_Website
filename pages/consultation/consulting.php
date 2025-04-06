@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../asset/css/consulting.css">
     <link rel="stylesheet" href="../../asset/css/navigation.css">
+    <link rel="shortcut icon" href="../../asset/image/gm.png" type="x-icon">
     <link rel="stylesheet" href="../../asset/css/drop_down_menu.css">
-    <title>Consultation</title>
+    <title>Glow Match</title>
 </head>
 <body>
     <section>
@@ -39,7 +40,7 @@
             });
 
         let currentQuestionIndex = 0;
-        let selectedOptions = [];
+        let selectedOptions = []; // Stores selected options for each question
 
         function loadQuestion() {
             const questionIds = Object.keys(window.questions);
@@ -59,13 +60,28 @@
                 let button = document.createElement('button');
                 button.classList.add('option-btn');
                 button.innerText = answer.text;
+
+                // Check if this option was previously selected
+                const selectedOption = selectedOptions.find(
+                    option => option.questionId === questionId && option.optionId === answer.option_id
+                );
+                if (selectedOption) {
+                    button.classList.add('selected'); // Mark as selected
+                }
+
                 button.onclick = () => selectAnswer(questionId, answer.option_id);
                 optionsContainer.appendChild(button);
             });
         }
 
         function selectAnswer(questionId, optionId) {
+            // Remove any existing selection for the current question
+            selectedOptions = selectedOptions.filter(option => option.questionId !== questionId);
+
+            // Add the new selection
             selectedOptions.push({ questionId, optionId });
+
+            // Move to the next question
             fetch('consulting3.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -81,8 +97,7 @@
         function prevQuestion() {
             if (currentQuestionIndex > 0) {
                 currentQuestionIndex--;
-                selectedOptions.pop();
-                loadQuestion();
+                loadQuestion(); // Reload the previous question
             }
         }
 
@@ -97,7 +112,7 @@
                 .then(data => {
                     const form = document.createElement('form');
                     form.method = 'POST';
-                    form.action = '../../pages/consultation/consulting-result/consulting-result.php'; 
+                    form.action = '../../pages/consultation/consulting-result/consulting-result.php';
                     const input = document.createElement('input');
                     input.type = 'hidden';
                     input.name = 'recommendation_data';

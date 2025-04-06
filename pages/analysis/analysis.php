@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../../asset/css/analysis.css">
     <link rel="stylesheet" href="../../asset/css/navigation.css">
     <script src="analysis.js"></script>
-    <title>Analyze Ingredients</title>
+    <link rel="shortcut icon" href="../../asset/image/gm.png" type="x-icon"> 
+    <title>Glow Match</title>
     <style>
         .analysis-container {
             justify-content: center;
