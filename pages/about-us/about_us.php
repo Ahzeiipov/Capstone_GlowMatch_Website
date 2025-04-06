@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="../../asset/css/about_us.css">
     <link rel="stylesheet" href="../../asset/global-style/product.css">
     <script src="about-us.js" defer></script>
+    <link rel="stylesheet" href="animate.css">
+    <link rel="shortcut icon" href="../../asset/image/gm.png" type="x-icon">
     <link rel="stylesheet" href="../../asset/css/navigation.css">
    
     <title>Glow Match</title>
 </head>
-
 <body>
     <?php include '../../component/navigation/navigation.php' ?>
 
@@ -35,18 +36,22 @@
 
     <section class="container">
         <div class="card">
-            <img src="../../asset/image/about-us/goal.png" alt="Nature" id="image1">
-            <p>The Check Ingredients feature analyzes skincare product ingredients and calculates their compatibility
-                with the user’s skin type. By uploading an image or entering ingredients manually, users receive a
-                percentage match score that indicates how well the product suits their skin and the benefits of those
-                ingredients.</p>
+            <img src="../../asset/image/gm.png" alt="Nature" id="image1">
+            <p> The capstone project by six <strong style="color:rgb(28, 32, 95);">CADT</strong> University students, guided by <strong style="color:rgb(50, 51, 55);">
+                    Dr. Ly Rattana</strong>, demonstrates the integration of software engineering and data science. 
+                    Team members Sambo Sopheapkline, Pov Veansa, Pich Punloue, Phoeun Phinnaroth, Poch Sreypov, 
+                    and Rotha Munypothida pooled their skills to address industry challenges, showcasing their 
+                    commitment to practical application of academic knowledge and the importance of collaboration
+                     and mentorship in developing innovative solutions.</p>
         </div>
         <div class="card reverse">
             <img src="../../asset/image/about-us/korean-style.png" alt="Nature" id="image2">
-            <p>The Check Ingredients feature analyzes skincare product ingredients and calculates their compatibility
-                with the user’s skin type. By uploading an image or entering ingredients manually, users receive a
-                percentage match score that indicates how well the product suits their skin and the benefits of those
-                ingredients.</p>
+            <p>The GlowMatch website is a dynamic online platform for meaningful connections, whether
+                 for dating, friendship, or networking. With a user-friendly interface and personalized
+                  matching algorithms, it connects individuals based on shared interests and values.
+                   The platform prioritizes safety and encourages community engagement through 
+                   interactive features, creating a unique and inclusive space for users to build 
+                   relationships securely.</p>
         </div>
     </section>
 
