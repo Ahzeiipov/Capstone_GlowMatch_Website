@@ -61,8 +61,8 @@ foreach ($userIngredients as $ingredient) {
     $stmt->execute();
 }
 
-// Fetch matching ingredients
-$sql = "SELECT IngredientName, AcneEffect, DarkSpotsEffect, LargePoresEffect 
+// Fetch matching ingredients with IngredientID
+$sql = "SELECT IngredientID, IngredientName, AcneEffect, DarkSpotsEffect, LargePoresEffect 
         FROM ingredients 
         WHERE FIND_IN_SET(?, SkinTypeEffect)";
 $stmt = $conn->prepare($sql);
@@ -72,6 +72,7 @@ $result = $stmt->get_result();
 
 $matchedIngredients = [];
 $points = 0;
+$ingredientAnalysis = []; // To store data for useringredientanalysis table
 
 while ($row = $result->fetch_assoc()) {
     $ingredientName = trim(strtolower($row['IngredientName']));
@@ -94,12 +95,23 @@ while ($row = $result->fetch_assoc()) {
         if ($isBeneficial) {
             $points += 1;
         }
+
+        // Determine Suitability for useringredientanalysis
+        $suitability = $isBeneficial ? 'Good' : 'Neutral'; // Assuming 'Bad' if no beneficial effect is rare
+        $analysisResult = $isBeneficial ? "Beneficial for your skin condition" : "Neutral effect on your skin condition";
+
+        // Store for insertion
+        $ingredientAnalysis[] = [
+            'IngredientID' => $row['IngredientID'],
+            'Suitability' => $suitability,
+            'AnalysisResult' => $analysisResult
+        ];
     }
 }
 
 // Calculate match percentage
 $numberOfUserIngredients = count($userIngredients);
-$maxPossiblePoints = $numberOfUserIngredients; // Now max points is just number of ingredients
+$maxPossiblePoints = $numberOfUserIngredients; // Max points is number of ingredients
 $matchPercentage = ($maxPossiblePoints > 0) ? round(($points / $maxPossiblePoints) * 100, 2) : 0;
 
 // Determine percentage range
@@ -129,15 +141,23 @@ foreach ($conditions as $condition) {
     }
 }
 
-// Special case for "Perfect" range
+// Special case for percentage ranges
 if ($percentageRange === 'Perfect') {
     $combinedDescription = "These ingredients are highly effective and well-suited to your skin’s condition. They provide optimal benefits and are a great match for achieving noticeable results with minimal risk of irritation.";
 } elseif ($percentageRange === 'Good') {
-    $combinedDescription = " These ingredients are generally compatible with your skin’s condition. They offer solid benefits and can support your skincare goals, though they might not be as targeted or potent as those in the Perfect range.";
-}elseif ($percentageRange === 'Satisfactory') {
-    $combinedDescription =  "These ingredients are somewhat matched to your skin’s condition and can provide mild benefits. While not as strong as higher-rated ingredients, they can still support basic skincare needs and contribute to overall skin health.";
+    $combinedDescription = "These ingredients are generally compatible with your skin’s condition. They offer solid benefits and can support your skincare goals, though they might not be as targeted or potent as those in the Perfect range.";
+} elseif ($percentageRange === 'Satisfactory') {
+    $combinedDescription = "These ingredients are somewhat matched to your skin’s condition and can provide mild benefits. While not as strong as higher-rated ingredients, they can still support basic skincare needs and contribute to overall skin health.";
 } else {
-    $combinedDescription = " These ingredients may not be the best match for your skin’s current condition. While they can provide some benefits, they are less likely to effectively address your specific needs or may not be as compatible with your skin type, potentially offering limited or less noticeable results.";
+    $combinedDescription = "These ingredients may not be the best match for your skin’s current condition. While they can provide some benefits, they are less likely to effectively address your specific needs or may not be as compatible with your skin type, potentially offering limited or less noticeable results.";
+}
+
+// Insert into useringredientanalysis table
+foreach ($ingredientAnalysis as $analysis) {
+    $sql = "INSERT INTO useringredientanalysis (UserID, IngredientID, Suitability, AnalysisResult) VALUES (?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('iiss', $userId, $analysis['IngredientID'], $analysis['Suitability'], $analysis['AnalysisResult']);
+    $stmt->execute();
 }
 
 // Return JSON response
